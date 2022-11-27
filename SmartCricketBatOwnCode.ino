@@ -425,7 +425,7 @@ void printBattPercent(){
     battPercent = oldBattPercent;
   }  
   SCBApp.print(battPercent); //print the voltage to LCD
-  SCBApp.print(" %");
+  SCBApp.println(" %");
   /*Serial.print(battPercent);
   Serial.println(" %");
   Serial.println(voltage);
