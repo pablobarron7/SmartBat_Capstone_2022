@@ -203,11 +203,23 @@ void loop() {
    }
    else if(receivedData == 49){  //if input 1, exit main loop, pause IMU dump
       while(resumeDump = SCBApp.read()){
-        if(resumeDump == 52){
+        if(resumeDump == 52){   //resume = 4
           break;
         }
         else if (Serial.read() == 52){
           break;
+        }
+        else if (resumeDump == 51){ //print batt %
+          printBattPercent();
+        }
+        else if (resumeDump == 48){ //calibrate
+          calibrateDevice();
+          if(startUpFinished == true){
+              SCBApp.println("Calibration Complete"); //Calibration Complete, 53
+          }
+          else{
+              SCBApp.println("Calibration Failed");   //Calibration Failed, 54
+          }
         }
         else{
           delay(50);
