@@ -76,6 +76,9 @@ int giro_deadzone = 1;     //Giro error allowed, make it lower to get more preci
 int mean_ax,mean_ay,mean_az,mean_gx,mean_gy,mean_gz,state=0;
 int ax_offset,ay_offset,az_offset,gx_offset,gy_offset,gz_offset;
 
+//Battery Percentage
+float battPercent = 100.0;
+
 // orientation/motion vars
 Quaternion q;           // [w, x, y, z]         quaternion container
 VectorInt16 aa;         // [x, y, z]            accel sensor measurements
@@ -210,6 +213,9 @@ void loop() {
           delay(50);
         }
       }
+   }
+   else if(receivedData == 51){ //sending 3 give battery%
+      printBattPercent();
    }
    else if(receivedData == 50){
       exit(0);
@@ -410,10 +416,20 @@ void calibration(){   //used to get the Gyro and Accel offsets using mean value 
 void printBattPercent(){
   int sensorValue = analogRead(A0); //read the A0 pin value
   float voltage = sensorValue * (5.00 / 1023.00) * 2; //convert the value to a true voltage.
-  float battPercent = 0;
+  float oldBattPercent = battPercent;
   battPercent = (voltage/4.2)*100;
+  if(battPercent > 100.0){
+    battPercent = 100.0;
+  }
+  else if(oldBattPercent < battPercent){
+    battPercent = oldBattPercent;
+  }  
   SCBApp.print(battPercent); //print the voltage to LCD
   SCBApp.print(" %");
+  /*Serial.print(battPercent);
+  Serial.println(" %");
+  Serial.println(voltage);
+  Serial.println(sensorValue);*/
   if (voltage < 3.3){ //set the voltage considered low battery here
     SCBApp.println("Low Battery");
   }
