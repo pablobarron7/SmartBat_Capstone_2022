@@ -401,6 +401,7 @@ void calibration(){   //used to get the Gyro and Accel offsets using mean value 
 
     meansensors();
     Serial.println("...");  //let user know something is happening, not stuck in a loop
+    SCBApp.println("...");
 
     //deadzone is equal to sensitivy of IMU device
     if (abs(mean_ax)<=acel_deadzone) ready++;   //if mean of axis is less than deadzone, then that offset is accurate and ready to implement in main loop
@@ -438,9 +439,9 @@ void printBattPercent(){
   }  
   SCBApp.print(battPercent); //print the voltage to LCD
   SCBApp.println(" %");
-  /*Serial.print(battPercent);
+  Serial.print(battPercent);
   Serial.println(" %");
-  Serial.println(voltage);
+  /*Serial.println(voltage);
   Serial.println(sensorValue);*/
   if (voltage < 3.3){ //set the voltage considered low battery here
     SCBApp.println("Low Battery");
@@ -450,12 +451,14 @@ void printBattPercent(){
 void calibrateDevice(){
   if (state==0){  //first, do state0 where the sensor data is read and averaged
       Serial.println("\nReading sensors for first time...");
+      SCBApp.println("\nReading sensors for first time...");
       meansensors();
       state++;
       delay(500);
     }
     if (state==1) { //state1, is then done next, and it calculates the offsets needed for all the IMU values to be equal to 0
       Serial.println("\nCalibrating Bat Sensor...");
+      SCBApp.println("\nCalibrating Bat Sensor...");
       calibration();
       state++;
       delay(500);
