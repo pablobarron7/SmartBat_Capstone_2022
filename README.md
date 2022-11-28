@@ -3,7 +3,7 @@
   
 ANDROID APP SUBSYSTEM:
   
-  The necessary source files for the android app are located under the "src" folder and "build.gradle" and "settings.gradle" files. The Andriod App receives data from our MCU via bluetooth which is then sent to an AWS cloud to be processed by the ML Model. The ML Model will then calcuate the hit location and swing speed. The app will then fetch the calculated results from our AWS Cloud.
+  The necessary source files for the android app are located under the "src" folder and include the "build.gradle" and "settings.gradle" files. The Andriod App receives data from our MCU via bluetooth which is then sent to an AWS cloud to be processed by the ML Model. The ML Model will then calcuate the hit location and swing speed. The app will then fetch the calculated results from our AWS Cloud.
 
 
 CONTROL SUBSYSTEM:
