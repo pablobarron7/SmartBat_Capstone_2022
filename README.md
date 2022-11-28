@@ -8,7 +8,7 @@ ANDROID APP SUBSYSTEM:
 
 CONTROL SUBSYSTEM:
   
-  Download the SmartCricketBatOwnCode.ino file, along with the MCU libraries, and use both within Ardunio studio to flash desired ATmega328p microcontroller (make sure  MCU libraries are properly added to Arduino studios directory after download to avoid any errors). Within the IMU Validation Plots folder are the results from several validation tests performed on the MPU-6050 inertial measurement unit, the plots prove the data recieved from the IMU is accurate, within some margin, to the expected results (raw data text files used to create plots are available within folder as well). 
+  Download the SmartCricketBatOwnCode.ino file, along with the MCU libraries, and use both within Ardunio studio to flash desired ATmega328p microcontroller (make sure  MCU libraries are properly added to Arduino studio's directory after download to avoid any errors). Within the IMU Validation Plots folder are the results from several validation tests performed on the MPU-6050 inertial measurement unit, the plots prove the data recieved from the IMU is accurate, within some margin, to the expected results (raw data text files used to create plots are available within folder as well). 
   
 POWER SUBSYSTEM:
   
