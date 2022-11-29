@@ -13,5 +13,6 @@ CONTROL SUBSYSTEM:
 POWER SUBSYSTEM:
   
 ML SUBSYSTEM:
+
   All the necessary files are in the ML folder. WIth data collected, "Preprocessing321" to generate features and labels for trainnig the ML. They are named as "feature(1)" and "label(1)". With features and labels, you can traing the model with "Training321" and see the accuracy, heatmap, and feature importance(the seaborn pairplot is comment out). "model1.pkl" is the final model that we use for this project. "sv" is a python file as "sv.py" with stands for server version of my code where it will run on aws EC2 to predict the final results.
  
