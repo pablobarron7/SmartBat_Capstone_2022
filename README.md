@@ -12,7 +12,7 @@ CONTROL SUBSYSTEM:
   
 POWER SUBSYSTEM:
 
-  The FinalPCB folder contains the EAGLE schematic and PCB board layout files for the project. The PCB contains the battery charging circuit and boost converter circuit  which distribute all the necessary power to the control system. The powersystem results folder contains results for the boost converter load test as well as results for the battery charging circuit.
+  The "FinalPCB" folder contains the EAGLE schematic and PCB board layout files for the project. The PCB contains the battery charging circuit and boost converter circuit  which distribute all the necessary power to the control system. The "powersystemresults" folder contains results for the boost converter load test as well as results for the battery charging circuit.
   
 ML SUBSYSTEM:
 
